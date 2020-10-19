@@ -1,28 +1,29 @@
+[
 {
-    "user1" : {
+    
        "name" : "mahesh",
        "password" : "password1",
        "scope" : "manager",
        "id": 1
     },
-    
-    "user2" : {
+    {    
+
        "name" : "suresh",
        "password" : "password2",
        "scope" : "manager",
        "id": 2
     },
-    
-    "user3" : {
-       "name" : "ramesh",
+       {
+        "name" : "ramesh",
        "password" : "password3",
        "scope" : "Employee",
        "id": 3
     },
-    "user4" : {
+    {
         "name" : "Dhoni",
         "password" : "password3",
         "scope" : "Employee",
         "id": 4
      }
- }
+    
+]

@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
-
+var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
 app.get('/listUsers', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
       console.log( data );
@@ -9,8 +10,6 @@ app.get('/listUsers', function (req, res) {
    });
 })
 
-var server = app.listen(8081, function () {
-   var host = server.address().address
-   var port = server.address().port
-   console.log("Example app listening at http://%s:%s", host, port)
-})
+server.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
+});

@@ -3,6 +3,11 @@ var app = express();
 var fs = require("fs");
 const host = '0.0.0.0';
 const port = process.env.PORT || 3000;
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
+
 app.get('/listUsers', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
       console.log( data );

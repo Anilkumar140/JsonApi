@@ -1,15 +1,15 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
-var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
-var server_host = process.env.YOUR_HOST || '0.0.0.0';
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
 app.get('/listUsers', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
       console.log( data );
       res.end( data );
    });
 })
-
-server.listen(server_port, server_host, function() {
-    console.log('Listening on port %d', server_port);
-});
+app.listen(port, host, function() {
+    console.log("Server started.......");
+  });
+  
